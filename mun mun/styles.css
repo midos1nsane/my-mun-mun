@@ -4,47 +4,40 @@ body {
     font-family: 'Poppins', sans-serif;
     background: radial-gradient(circle, #ffe0e6, #ffc8d7, #ffb3d1);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow: hidden; /* Prevent accidental scrolling */
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-header h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    color: #ff7590;
-}
-
-header p {
-    font-size: 1.2rem;
-    color: #ff5f78;
-}
-
-/* Cards */
 .container {
     width: 100%;
     max-width: 400px;
+    text-align: center;
     position: relative;
+    height: 100vh; /* Full screen height for centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transform: scale(0.8) translateY(50%);
     opacity: 0;
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     position: absolute;
-    text-align: center;
+    height: auto;
+    width: 90%; /* Ensure it fits mobile screens */
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card.active {
@@ -109,5 +102,22 @@ footer {
     }
     60% {
         transform: translateY(-7px);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .card {
+        padding: 15px;
+        width: 95%; /* Allow more space on smaller screens */
+    }
+
+    .emoji {
+        font-size: 4rem;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }
