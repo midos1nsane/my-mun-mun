@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle, #fddde6, #ffc6d9, #ffb3d1);
+    background: radial-gradient(circle, #ffe0e6, #ffc8d7, #ffb3d1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,17 +11,14 @@ body {
     overflow: hidden;
 }
 
-h1, h2, p {
-    margin: 0;
-    line-height: 1.6;
-    color: #5e1d65;
-    text-align: center;
-}
-
 .container {
     width: 100%;
     max-width: 400px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card {
@@ -29,27 +26,33 @@ h1, h2, p {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 100%);
+    opacity: 0;
+    transform: scale(0.8) translateY(50%);
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    text-align: center;
 }
 
 .card.active {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: scale(1) translateY(0);
+    z-index: 10;
+}
+
+.card.inactive {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50%);
+    z-index: 0;
 }
 
 .emoji-container {
     margin: 20px 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .emoji {
     font-size: 5rem;
-    animation: bounce 1.5s infinite;
+    animation: bounce 1.5s infinite ease-in-out;
 }
 
 .button {
@@ -61,11 +64,12 @@ h1, h2, p {
     font-size: 1rem;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(255, 120, 155, 0.4);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .button:hover {
     transform: scale(1.1);
+    background: linear-gradient(45deg, #ff5f73, #ff6fa1);
 }
 
 @keyframes bounce {
@@ -73,9 +77,20 @@ h1, h2, p {
         transform: translateY(0);
     }
     40% {
-        transform: translateY(-20px);
+        transform: translateY(-15px);
     }
     60% {
-        transform: translateY(-10px);
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
