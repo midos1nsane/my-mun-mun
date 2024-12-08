@@ -5,46 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💖 To Muna: One Month Together 💖</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <!-- Envelope Message -->
-        <div class="card active" id="card1">
+        <div class="background-animation"></div>
+        <!-- Header -->
+        <header class="header">
             <h1>💌 To Muna 💌</h1>
+            <p>Celebrating One Month of Love 💕</p>
+        </header>
+        <!-- Cards -->
+        <div class="card active" id="card1">
+            <h2>Open the Envelope 💌</h2>
             <div class="emoji-container">
                 <div class="emoji">💌</div>
             </div>
-            <p>Happy 1-month anniversary! Tap below to open this special envelope crafted just for you. 💕</p>
+            <p>Click the button below to reveal the first surprise. 🥰</p>
             <button class="button" onclick="showCard(2)">✨ Open the Envelope ✨</button>
         </div>
-        <!-- Page 1 -->
+
         <div class="card" id="card2">
             <h2>🌸 You Are My Sunshine 🌸</h2>
             <div class="emoji-container">
                 <div class="emoji">🌞</div>
             </div>
-            <p>Your presence fills my life with light and warmth. Every day with you feels like a dream. 🌟</p>
+            <p>Your presence fills my days with light and warmth. Thank you for being my sunshine. 🌟</p>
             <button class="button" onclick="showCard(3)">Next Surprise 🌈</button>
         </div>
-        <!-- Page 2 -->
+
         <div class="card" id="card3">
             <h2>🌹 A Rose for You 🌹</h2>
             <div class="emoji-container">
                 <div class="emoji">🌹</div>
             </div>
-            <p>A single rose for the one who holds my heart. My love for you blossoms more each day. 💘</p>
+            <p>With each passing day, my love for you blooms like this rose. You mean the world to me. 💘</p>
             <button class="button" onclick="showCard(4)">Next Surprise 💞</button>
         </div>
-        <!-- Page 3 -->
+
         <div class="card" id="card4">
             <h2>🎉 Celebrating Us 🎉</h2>
             <div class="emoji-container">
                 <div class="emoji">🎉</div>
             </div>
-            <p>Muna, thank you for being the incredible person you are. Here's to many more months of love and laughter. 🥂</p>
+            <p>One month down, forever to go. I can't wait to see what the future holds for us. 🥂</p>
             <button class="button" onclick="finalSurprise()">🎁 Final Surprise</button>
         </div>
     </div>
+    <footer>
+        <p>Handcrafted with 💖</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,35 +1,49 @@
-/* Reset and Base Styles */
+/* General Styles */
 body {
     margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
     background: radial-gradient(circle, #ffe0e6, #ffc8d7, #ffb3d1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-.container {
-    width: 100%;
-    max-width: 400px;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #ff7590;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ff5f78;
+}
+
+/* Cards */
+.container {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
 }
 
 .card {
-    background: white;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    position: absolute;
-    opacity: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transform: scale(0.8) translateY(50%);
+    opacity: 0;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    position: absolute;
     text-align: center;
 }
 
@@ -39,22 +53,17 @@ body {
     z-index: 10;
 }
 
-.card.inactive {
-    opacity: 0;
-    transform: scale(0.8) translateY(-50%);
-    z-index: 0;
-}
-
+/* Emojis */
 .emoji-container {
     margin: 20px 0;
-    animation: fadeIn 2s ease-in-out;
+    animation: bounce 1.5s infinite ease-in-out;
 }
 
 .emoji {
     font-size: 5rem;
-    animation: bounce 1.5s infinite ease-in-out;
 }
 
+/* Buttons */
 .button {
     background: linear-gradient(45deg, #ff758c, #ff7eb3);
     color: white;
@@ -63,13 +72,32 @@ body {
     border-radius: 50px;
     font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(255, 120, 155, 0.4);
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .button:hover {
     transform: scale(1.1);
     background: linear-gradient(45deg, #ff5f73, #ff6fa1);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #555;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes bounce {
@@ -81,16 +109,5 @@ body {
     }
     60% {
         transform: translateY(-7px);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
     }
 }
